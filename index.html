@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday, Bila 🎂</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- OPENING MODAL -->
+<div class="opening-modal" id="openingModal">
+  <div class="opening-box">
+    <h1>🎂 Happy Birthday, Bila sayang 🎂</h1>
+    <p>
+      Terlihat biasa tapi kalo diamati menjadi luar biasa
+    </p>
+    <button id="openGiftBtn">Buka Hadiah 🎁</button>
+  </div>
+</div>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+  <source src="assets/lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCRIPT -->
+<script>
+const openBtn = document.getElementById("openGiftBtn");
+
+openBtn.addEventListener("click", function() {
+  alert("Eitss gasabar yaa, siapin HP buat rekam reaksi ayy ya 😏🎥");
+  // play musik
+  const music = document.getElementById("bgMusic");
+  music.volume = 0.5;
+  music.play();
+
+  // efek fade out modal
+  const modal = document.getElementById("openingModal");
+  modal.style.opacity = "0";
+
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 500);
+});
+</script>
+
+<!-- STYLE (opsional biar smooth) -->
+<style>
+.opening-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #e1bee7, #bbdefb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+.opening-box {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #ec4899;
+  color: white;
+  cursor: pointer;
+}
+</style>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <button onclick="scrollToSection('landing')" class="nav-btn">Home</button>
+    <button onclick="scrollToSection('firstmeet')" class="nav-btn">About You</button>
+    <button onclick="scrollToSection('gallery')" class="nav-btn">Gallery</button>
+    <button onclick="scrollToSection('letter')" class="nav-btn">Letter</button>
+    <button id="musicToggle" class="nav-music" title="Play music">▶️</button>
+    <input id="musicInput" type="file" accept="audio/*" style="display:none" />
+  </div>
+</nav>
+
+<!-- Floating hearts -->
+<div id="particles"></div>
+
+<!-- LANDING -->
+<section id="landing" class="panel landing">
+  <div class="container">
+    <h1 class="logo">Happy Birthday</h1>
+    <h3 class="sublogo">For Saskia salsabilah</h3>
+
+    <p class="lead">
+      Ini adalah hari spesial<br>
+      this is your day
+    </p>
+
+    <div class="cta-row">
+      <button class="cta" onclick="scrollToSection('firstmeet')">
+        Lihat Versi Kamu
+      </button>
+      <button class="cta ghost" onclick="scrollToSection('gallery')">
+        Buka Gallery
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT YOU (ex First Meet) -->
+<section id="firstmeet" class="panel card-panel">
+  <div class="container narrow">
+    <h2 class="section-title">About You 📸</h2>
+    <p class="desc">Sedikit versi dari aku yang mencintaimu</p>
+
+    <div class="firstmeet">
+      <!-- GANTI FOTO INI DENGAN FOTO DIA -->
+      <img src="assets/awal.JPG" class="firstmeet-img" alt="Bila" /> 
+      
+      <!-- TEKS DESKRIPSI -->
+      <p class="firstmeet-text">
+        Kamu itu adalah orang yang paling aku sayang, 
+        kamu juga yang bikin hari hariku cerah dengan joks receh yang bikin aku ketawa, 
+        kadang nyebelin kadang meraju, kadang kentut, 
+        tapi justru itu yang bikin aku makin sayang pake banget sama kamu, 
+        makasih ya udah mau bertahan sama aku selama ini, 
+        makasih juga udah jadi kamu versi terbaik yang pernah aku temuin ❤️
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- STYLE TAMBAHAN -->
+<style>
+.firstmeet {
+  text-align: center;
+}
+
+.firstmeet-img {
+  width: 250px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.firstmeet-text {
+  font-size: 16px;
+  color: #444;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+</style>
+
+<!-- GALLERY -->
+<section id="gallery" class="panel">
+  <div class="container narrow">
+    <h2 class="section-title">Kadooo timeeee 🤍</h2>
+    <p class="desc">
+      Beberapa Kado sederhana dari aku
+    </p>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/foto1.JPG" class="gallery-img" alt="Foto 1">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/foto2.jpg" class="gallery-img" alt="Foto 2">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/sugar.JPG" class="gallery-img" alt="Foto 3">
+      </div>
+      <div class="gallery-item">
+        <img src="assets/foto4.jpg" class="gallery-img" alt="Foto 4">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section id="video" class="panel">
+  <h2 style="text-align:center;">A Small Video For You 🎬</h2>
+  <p style="text-align:center; margin-bottom:10px;">
+    Bukan yang sempurna, tapi yang paling niat 😏
+  </p>
+
+  <div style="display:flex; justify-content:center;">
+    <!-- GANTI LINK DI BAWAH -->
+    <a href="https://drive.google.com/file/d/1WJ8mw6lAH9B8eJVo5spJlKwyR00JxF4f/view?usp=sharing" target="_blank" class="video-box">
+      <div class="play-icon">▶</div>
+      <h3>Play The Chaos 😎</h3>
+      <p>Klik buat lihat full version kita 🎥</p>
+    </a>
+  </div>
+</section>
+
+
+<!-- LETTER -->
+<section id="letter" class="panel card-panel">
+  <div class="container narrow">
+    <h2 class="section-title script">A Letter For You 💌</h2>
+
+    <div class="letter-box glass">
+      <p class="letter-text">
+        Bila,<br><br>
+
+        Selamat ulang tahun ya sayang.<br>
+        Terima kasih sudah jadi diri kamu sendiri — yang kadang rame,
+        kadang diem, kadang ngambek tapi gengsi.<br><br>
+
+        Semoga di umur baru ini kamu tetap sehat,
+        tetap jadi kamu,
+        dan tetap nemu hal-hal kecil yang bikin kamu senyum.<br><br>
+
+        Kuharap di umur ay yang baru ini dikurangin egoisnya,
+        Kurangin marah nda jelasnya,
+        tetap sama aku terus ya sampai akhir hayat nanti
+        <br><br>
+
+        maafin aku juga ya kalo selama ini aku banyak salah sama ay,
+        kalo selama ini aku pernah kasarin ay, kalo aku pernah marahin ay,
+        tapi sebenarnya aku sayang kok beneran deh<br><br>
+
+        Diantara banyaknya perempuan di dunia ini aku tetap
+        milih kamu, karena apa? ya karena sayang lah, aku cuma butuh 
+        ay percaya sama aku, aku gabakal macam macam, aku itu cuma
+        sayang sama ay titik pokoknnya muahhhh<br><br>
+
+        Disclaimer dulu ni aku buat ini dari tahun lalu kalo gasalah,
+        cuman telat kasih, dan alhamdullilah di tahun ini kita masih dikasih
+        umur yang panjang jadi aku bisa kasih deh ini yeyeyeye<br><br>
+
+        <span class="signature">— dari orang yang selalu milih kamu</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Built with ❤️ </p>
+</footer>
+
+<!-- Audio -->
+<audio id="bgAudio" loop></audio>
+
+<!-- Script -->
+<script src="script.js"></script>
+
+<!-- MODAL GALLERY -->
+<div id="galleryModal" class="gallery-modal">
+  <span id="closeModal" class="close">&times;</span>
+  <img class="modal-content" id="modalImg" alt="Gallery Image" />
+</div>
+
+<!-- QR Surprise Section (versi baru tanpa QR) -->
+<section class="panel" style="text-align:center;">
+  <h2 class="section-title">🎁 Ini adalah ending</h2>
+  <p class="desc" id="questionText">siapa yang paling nyonyoooo 😏</p>
+
+  <!-- Pilihan -->
+  <div style="margin-top:15px;">
+    <button class="cta" onclick="answerClick()">Aku 😎</button>
+    <button class="cta" onclick="answerClick()">Kamu ❤️</button>
+  </div>
+</section>
+
+<!-- Loading Overlay -->
+<div id="qrLoading" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+  color:white;
+  text-align:center;
+  flex-direction:column;
+">
+  <p id="qrLoadingText">Menyiapkan sesuatu untuk kamu…</p>
+</div>
+
+<script>
+// teks loading
+const texts = [
+  "Menyiapkan sesuatu untuk kamu…",
+  "Mengumpulkan kenangan kita…",
+  "Sedikit lagi ya… ❤️",
+  "Ini khusus buat kamu…"
+];
+
+let i = 0;
+
+// saat tombol diklik
+function answerClick() {
+  // ubah teks jadi respon lucu
+  document.getElementById("questionText").innerText = "Jawaban kamu aku catet ya 😏";
+
+  // munculin loading
+  const loading = document.getElementById("qrLoading");
+  loading.style.display = "flex";
+
+  // mulai animasi text
+  changeText();
+}
+
+// ganti teks loading
+function changeText() {
+  const textElement = document.getElementById("qrLoadingText");
+
+  if (i < texts.length) {
+    textElement.innerText = texts[i];
+    i++;
+    setTimeout(changeText, 2000);
+  } else {
+    window.location.href = "surprise.html"; // ganti sesuai halaman kamu
+  }
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bgMusic = document.getElementById("bgMusic");
+  const video = document.getElementById("gift-video");
+
+  // Musik mulai saat klik pertama user
+  function startMusicOnce() {
+    if (bgMusic) {
+      bgMusic.play().catch(() => {});
+    }
+    document.removeEventListener("click", startMusicOnce);
+  }
+
+  document.addEventListener("click", startMusicOnce);
+
+  // Saat video diputar → musik pause
+  if (video && bgMusic) {
+    video.addEventListener("play", function () {
+      bgMusic.pause();
+    });
+
+    // Saat video di-pause → musik lanjut
+    video.addEventListener("pause", function () {
+      bgMusic.play().catch(() => {});
+    });
+
+    // Saat video selesai → musik lanjut
+    video.addEventListener("ended", function () {
+      bgMusic.play().catch(() => {});
+    });
+  }
+});
+</script>
+
+</body>
+</html>

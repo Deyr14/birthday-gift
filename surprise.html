@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Kamu ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #fce4ec, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #f8bbd0;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- STEP 1 -->
+  <div id="step1">
+    <h1>Heii nyonyooo 😄</h1>
+    <p>Aku tau kamu pasti penasaran dari tadi…</p>
+    <button onclick="nextStep(1)">Lanjut 👉</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="step2" class="hidden">
+    <p>
+      Sebenernya ini cuma hal kecil sih…  
+      tapi aku bikinnya sambil mikirin kamu terus 😄
+    </p>
+    <button onclick="nextStep(2)">Lanjut lagi</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div id="step3" class="hidden">
+    <p>
+      Kadang kamu nyebelin, kadang juga suka bikin kesel…  
+      tapi anehnya aku tetap betah 😌
+    </p>
+    <button onclick="nextStep(3)">Terakhir deh</button>
+  </div>
+
+  <!-- FINAL -->
+  <div id="final" class="hidden">
+    <h1>❤️</h1>
+    <p>
+      Tapi serius ya…  
+      dari semua hal yang aku punya,  
+      kamu itu yang paling aku syukuri.  
+      <br><br>
+      Happy Birthday ya 🎉  
+      semoga kamu selalu bahagia,  
+      dan semoga aku masih jadi bagian dari itu 😊
+      jangan pernah berubah ya sampe kita nikah dan 1 atap bersama
+    </p>
+
+    <!-- Tombol balik -->
+    <button onclick="goBack()">Jangan pencet ini 😄</button>
+  </div>
+
+</div>
+
+<script>
+function nextStep(step) {
+  document.getElementById("step" + step).classList.add("hidden");
+
+  if (step === 3) {
+    document.getElementById("final").classList.remove("hidden");
+  } else {
+    document.getElementById("step" + (step + 1)).classList.remove("hidden");
+  }
+}
+
+// fungsi balik ke halaman awal
+function goBack() {
+  document.body.style.opacity = "0";
+  setTimeout(() => {
+    window.location.href = "index.html"; // pastikan ini sesuai nama file awal kamu
+  }, 500);
+}
+</script>
+
+</body>
+</html>
